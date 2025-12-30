@@ -38,26 +38,33 @@ const Navbar = ({ smoothScrollToSection }) => {
   const handleNavClick = (e, href) => {
     e.preventDefault()
     setIsOpen(false)
+    setDropdownOpen(false)
     
     // If not on home page, navigate to home first
     if (location.pathname !== '/') {
       navigate('/')
       // After navigating, scroll to section
       setTimeout(() => {
-        const element = document.getElementById(href)
-        if (element) {
-          const offset = 100
-          const elementPosition = element.getBoundingClientRect().top
-          const offsetPosition = elementPosition + window.pageYOffset - offset
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          })
-        }
+        scrollToSection(href)
       }, 300)
     } else {
       // Already on home page, just scroll to section
-      smoothScrollToSection(e, href)
+      scrollToSection(href)
+    }
+  }
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 100
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+      
+      // Smooth scroll with easing animation
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
     }
   }
 

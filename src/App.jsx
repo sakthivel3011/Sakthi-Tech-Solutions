@@ -12,6 +12,7 @@ import AboutDetail from './pages/AboutDetail'
 import Feedback from './pages/Feedback'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import Terms from './pages/Terms'
+import CookiePolicy from './pages/CookiePolicy'
 import Licensing from './pages/Licensing'
 import Contact from './pages/Contact'
 
@@ -58,7 +59,8 @@ function App() {
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<Terms />} />
+            <Route path="/terms-and-conditions" element={<Terms />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/licensing" element={<Licensing />} />
           </Route>
         </Routes>

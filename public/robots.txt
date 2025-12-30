@@ -1,0 +1,36 @@
+# Robots.txt for Sakthi Tech Solutions
+# Generated for Firebase Hosting
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /private/
+
+# Crawl delay
+Crawl-delay: 1
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://sakthitech.web.app/sitemap.xml

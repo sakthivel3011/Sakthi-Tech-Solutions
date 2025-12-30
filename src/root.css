@@ -2,6 +2,16 @@
 /* Component-specific styles have been moved to separate CSS files */
 @import url('./styles/DarkMode.css');
 
+/* Smooth scroll behavior for all scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth scroll animation for body */
+body {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* ===== Brand / Accent Colors ===== */
   --color-primary: #0b5ed7;
