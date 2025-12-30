@@ -1,0 +1,401 @@
+/* src/styles/Navbar.css */
+
+/* Navbar Styles - Desktop (No Changes) */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 1rem 0;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+/* Dark mode navbar */
+html.dark-mode .navbar {
+  background: rgba(15, 15, 15, 0.95);
+  border-bottom-color: var(--color-border-light);
+}
+
+.nav-container {
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 3rem;
+  
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.logo-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.brand-text h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--color-text-primary);
+}
+
+.tagline {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Desktop Navigation - Exactly Same */
+.nav-links-desktop {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-right: -10rem;
+}
+
+.nav-item-wrapper {
+  position: relative;
+}
+
+.nav-item {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-fast);
+  padding: 0.5rem 0;
+  position: relative;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.nav-item:hover {
+  color: var(--color-primary);
+}
+
+/* Desktop Dropdown */
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 0.5rem 0;
+  min-width: 220px;
+  box-shadow: var(--shadow-large);
+  border: 1px solid var(--color-border-light);
+  z-index: 1000;
+  animation: dropdownFade 0.2s ease-out;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+/* Dark mode dropdown */
+html.dark-mode .dropdown-menu {
+  background: var(--color-bg-card);
+  border-color: var(--color-border-light);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  border: none;
+  outline: none;
+  text-align: left;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+  background: var(--color-bg-soft);
+  color: var(--color-primary);
+}
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none; /* Hidden on desktop */
+  z-index: 1001;
+  outline: none;
+  transition: color var(--transition-fast);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  outline: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  color: var(--color-primary);
+  transition: transform var(--transition-normal), opacity var(--transition-normal), background-color var(--transition-normal);
+}
+
+/* Dark mode mobile nav */
+html.dark-mode .nav-links-mobile {
+  background: var(--color-bg-card);
+  transform: scale(1.1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Mobile Navigation */
+.nav-links-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 90vh;
+  background: white;
+  padding: 6rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-normal);
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.nav-links-mobile.active {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Menu Items */
+.nav-item-mobile {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  transition: var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  font-size: 1.1rem;
+  display: block;
+  border-bottom: 1px solid var(--color-border-light);
+  background: transparent;
+  text-align: left;
+  width: 100%;
+}
+
+.nav-item-mobile:hover {
+  background: var(--color-bg-soft);
+  color: var(--color-primary);
+}
+
+/* Mobile Dropdown */
+.dropdown-mobile {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-soft);
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.dropdown-item-mobile {
+  padding: 0.75rem 2rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  border: none;
+  text-align: left;
+  background: transparent;
+  width: 100%;
+}
+
+.dropdown-item-mobile:hover {
+  background: rgba(11, 94, 215, 0.1);
+  color: var(--color-primary);
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet and below (768px and below) */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+  
+  /* Hide desktop navigation */
+  .nav-links-desktop {
+    display: none;
+  .mobile-theme-toggle {
+    display: block;
+  }
+  
+  }
+  
+  /* Show mobile menu button */
+  .menu-toggle {
+    display: block;
+  }
+  
+  /* Adjust brand size for mobile */
+  .logo-image {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .brand-text h1 {
+    font-size: 1.3rem;
+  }
+  
+  .tagline {
+    font-size: 0.7rem;
+  }
+}
+
+/* Small phones (480px and below) */
+@media screen and (max-width: 480px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+  
+  .logo-image {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .brand-text h1 {
+    font-size: 1.1rem;
+  }
+  
+  .nav-links-mobile {
+    padding: 5rem 1rem 1rem;
+  }
+  
+  .nav-item-mobile {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .dropdown-item-mobile {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Large tablets (769px to 1024px) - Keep desktop view */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+  
+  .nav-links-desktop {
+    gap: 1.5rem;
+  }
+  
+  .mobile-theme-toggle {
+    display: none;
+  }
+  
+  .nav-item {
+    font-size: 0.95rem;
+  }
+}
+
+/* Desktop - Always show desktop nav */
+@media screen and (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+  
+  .nav-links-mobile {
+    display: none;
+  }
+}
+
+/* Animation */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure no unwanted changes on desktop */
+@media screen and (min-width: 769px) {
+  /* Keep all desktop styles exactly as they are */
+  .navbar {
+    padding: 1rem 0;
+  }
+  
+  .nav-container {
+    max-width: 1350px;
+  }
+  
+  .logo-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .brand-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .tagline {
+    font-size: 0.75rem;
+  }
+  
+  .nav-links-desktop {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-item {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .dropdown-menu {
+    min-width: 220px;
+  }
+}

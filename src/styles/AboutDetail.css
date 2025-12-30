@@ -1,0 +1,730 @@
+/* src/styles/AboutDetail.css */
+
+/* Page Transition Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Detail Page Styles */
+.about-detail {
+  padding: 6rem 2rem 4rem;
+  background: var(--color-bg-main);
+  min-height: 100vh;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.about-detail-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  padding: 3rem;
+  background: var(--color-bg-card);
+  border-radius: 20px;
+  box-shadow: var(--shadow-medium);
+}
+
+.about-detail-content {
+  text-align: left;
+}
+
+.about-detail-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brand-name {
+  color: var(--color-primary);
+}
+
+.about-detail-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.about-detail-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-card);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  height: 100%;
+  transition: background-color var(--transition-normal);
+}
+
+.window-dots {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red {
+  background: #ff5f56;
+}
+
+.dot-yellow {
+  background: #ffbd2e;
+}
+
+.dot-green {
+  background: #27c93f;
+}
+
+.about-detail-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.about-detail-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-story-section,
+.about-mission-section,
+.why-choose-section,
+.expertise-section,
+.values-section {
+  margin-bottom: 4rem;
+}
+
+.about-story-section h2,
+.about-mission-section h2,
+.why-choose-section h2,
+.expertise-section h2,
+.values-section h2,
+.about-cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.about-long-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  white-space: pre-line;
+  margin: 0;
+}
+
+.mission-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  padding: 2rem;
+  background: var(--color-bg-card);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 8px;
+  margin: 0;
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.why-choose-card {
+  padding: 2rem;
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--color-border-light);
+  transition: var(--transition-normal);
+  text-align: center;
+}
+
+.why-choose-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-large);
+  border-color: var(--color-primary);
+}
+
+.why-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-hover));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.why-choose-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.why-choose-card p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.expertise-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--color-border-light);
+  transition: var(--transition-normal);
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-primary);
+}
+
+.expertise-icon {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.expertise-card span {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.value-card {
+  padding: 1.5rem;
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--color-border-light);
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-primary);
+}
+
+.value-icon {
+  color: var(--color-primary);
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.value-card p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.about-cta-section {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  border-radius: 20px;
+  color: white;
+  margin-top: 4rem;
+}
+
+.about-cta-section h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.about-cta-section p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-cta-section .btn-primary {
+  background: white;
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+  transition: var(--transition-normal);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.about-cta-section .btn-primary:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design - ONLY FOR MOBILE/TABLET */
+@media (max-width: 1200px) {
+  .about-detail {
+    padding: 5rem 1.5rem 3rem;
+  }
+  
+  .section-container {
+    max-width: 1000px;
+  }
+  
+  .about-detail-header {
+    gap: 3rem;
+    padding: 2.5rem;
+  }
+  
+  .about-detail-title {
+    font-size: 2.25rem;
+  }
+  
+  .about-detail-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .about-detail-image img {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-detail-header {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+  
+  .about-detail-content {
+    text-align: center;
+  }
+  
+  .about-detail-title {
+    font-size: 2rem;
+  }
+  
+  .about-detail-subtitle {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about-detail-image {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .expertise-grid,
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-detail {
+    padding: 4rem 1rem 2rem;
+  }
+  
+  .about-detail-header {
+    padding: 1.75rem;
+    gap: 2rem;
+    border-radius: 16px;
+  }
+  
+  .about-detail-title {
+    font-size: 1.75rem;
+  }
+  
+  .about-detail-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .about-detail-image {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .about-detail-image img {
+    max-width: 250px;
+  }
+  
+  .window-dots {
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .about-story-section h2,
+  .about-mission-section h2,
+  .why-choose-section h2,
+  .expertise-section h2,
+  .values-section h2,
+  .about-cta-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .about-long-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .mission-text {
+    font-size: 1.1rem;
+    padding: 1.5rem;
+  }
+  
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .why-choose-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .why-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.75rem;
+  }
+  
+  .why-choose-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .why-choose-card p {
+    font-size: 0.95rem;
+  }
+  
+  .expertise-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .expertise-card,
+  .value-card {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+  
+  .expertise-card span {
+    font-size: 0.95rem;
+  }
+  
+  .value-card p {
+    font-size: 0.95rem;
+  }
+  
+  .about-cta-section {
+    padding: 2rem;
+    border-radius: 16px;
+    margin-top: 3rem;
+  }
+  
+  .about-cta-section h2 {
+    font-size: 1.75rem;
+  }
+  
+  .about-cta-section p {
+    font-size: 1rem;
+  }
+  
+  .about-cta-section .btn-primary {
+    padding: 0.9rem 1.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-detail {
+    padding: 3rem 0.75rem 1.5rem;
+  }
+  
+  .about-detail-header {
+    padding: 1.5rem;
+    gap: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .about-detail-title {
+    font-size: 1.5rem;
+  }
+  
+  .about-detail-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .about-detail-image {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+  
+  .about-detail-image img {
+    max-width: 200px;
+  }
+  
+  .about-story-section h2,
+  .about-mission-section h2,
+  .why-choose-section h2,
+  .expertise-section h2,
+  .values-section h2,
+  .about-cta-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-long-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .mission-text {
+    font-size: 1rem;
+    padding: 1.25rem;
+  }
+  
+  .why-choose-card {
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+  
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+  
+  .why-choose-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .why-choose-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .expertise-card,
+  .value-card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .expertise-icon {
+    font-size: 1.3rem;
+  }
+  
+  .expertise-card span {
+    font-size: 0.9rem;
+  }
+  
+  .value-icon {
+    font-size: 1.75rem;
+  }
+  
+  .value-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .about-cta-section {
+    padding: 1.75rem;
+    border-radius: 12px;
+    margin-top: 2.5rem;
+  }
+  
+  .about-cta-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .about-cta-section p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-cta-section .btn-primary {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-detail {
+    padding: 2.5rem 0.5rem 1rem;
+  }
+  
+  .about-detail-header {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+  
+  .about-detail-title {
+    font-size: 1.4rem;
+  }
+  
+  .about-detail-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .about-detail-image {
+    padding: 1rem;
+  }
+  
+  .about-detail-image img {
+    max-width: 180px;
+  }
+  
+  .window-dots {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .about-story-section h2,
+  .about-mission-section h2,
+  .why-choose-section h2,
+  .expertise-section h2,
+  .values-section h2,
+  .about-cta-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .about-long-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .mission-text {
+    font-size: 0.95rem;
+    padding: 1rem;
+    border-left-width: 3px;
+  }
+  
+  .why-choose-card {
+    padding: 1rem;
+  }
+  
+  .why-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+  
+  .why-choose-card h3 {
+    font-size: 0.95rem;
+  }
+  
+  .why-choose-card p {
+    font-size: 0.85rem;
+  }
+  
+  .expertise-card,
+  .value-card {
+    padding: 0.9rem;
+    gap: 0.75rem;
+  }
+  
+  .expertise-card span {
+    font-size: 0.85rem;
+  }
+  
+  .value-card p {
+    font-size: 0.85rem;
+  }
+  
+  .about-cta-section {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .about-cta-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .about-cta-section p {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .about-cta-section .btn-primary {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,414 @@
+/* Dark Mode Comprehensive Styles */
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  }
+}
+
+/* Apply to all text elements for smooth color transitions */
+html.dark-mode {
+  /* All text elements */
+  h1, h2, h3, h4, h5, h6, p, span, a, li, label, input, textarea {
+    transition: color var(--transition-normal), background-color var(--transition-normal);
+  }
+
+  /* All card-like elements */
+  .service-card,
+  .tool-card,
+  .testimonial-card,
+  .milestone-content,
+  .nav-button,
+  .category-tab {
+    transition: all var(--transition-normal);
+  }
+  }
+
+  /* Input fields and forms */
+  input,
+  textarea,
+  select {
+    background-color: var(--color-bg-card);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-light);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: #000000 !important;
+  }
+
+  .btn-primary:hover {
+    color: #000000 !important;
+  }
+
+  .btn-secondary,
+  .btn-outline {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: #ffffff !important;
+  }
+
+  /* Links */
+  a {
+    color: var(--color-primary);
+  }
+
+  a:hover {
+    color: var(--color-hover);
+  }
+
+  /* Dropdown menu */
+  .dropdown-menu {
+    background-color: var(--color-bg-card);
+    border-color: var(--color-border-light);
+  }
+
+  .dropdown-item {
+    color: var(--color-text-secondary);
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--color-bg-soft);
+    color: var(--color-primary);
+  }
+
+  /* Mobile menu */
+  .nav-links-mobile {
+    background-color: var(--color-bg-card);
+  }
+
+  .nav-item-mobile {
+    color: var(--color-text-primary);
+    border-bottom-color: var(--color-border-light);
+  }
+
+  .nav-item-mobile:hover {
+    background-color: var(--color-bg-soft);
+    color: var(--color-primary);
+  }
+
+  /* Service cards and related */
+  .service-image-wrapper {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+  
+  html.dark-mode .service-image {
+    background-color: #ffffff !important;
+  }
+
+  /* Timeline elements */
+  .timeline-line {
+    background-color: var(--color-border-light);
+  }
+
+  .point-year {
+    color: var(--color-text-secondary);
+  }
+
+  /* All sections */
+  .section-label {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--color-primary);
+  }
+
+  /* Icons and SVGs */
+  svg {
+    color: #3b82f6;
+    transition: all 0.3s ease;
+  }
+
+  /* All icon elements */
+  svg path,
+  svg circle,
+  svg rect,
+  svg polygon,
+  svg polyline,
+  svg line {
+    fill: inherit;
+    stroke: inherit;
+  }
+
+  /* React Icons */
+  [class*="icon"],
+  [class*="Icon"] {
+    color: #3b82f6;
+    transition: all 0.3s ease;
+  }
+
+  /* Specific icon elements */
+  .icon,
+  .icon-wrapper,
+  .benefit-icon,
+  .feature-icon,
+  .service-icon,
+  .tool-logo svg,
+  .mini-logo svg,
+  .logo-circle svg {
+    color: #3b82f6;
+    transition: all 0.3s ease;
+  }
+
+  /* Icon hover effects */
+  svg:hover,
+  [class*="icon"]:hover,
+  [class*="Icon"]:hover,
+  .icon:hover,
+  .icon-wrapper:hover,
+  .benefit-icon:hover,
+  .feature-icon:hover,
+  .service-icon:hover,
+  .tool-logo svg:hover,
+  .mini-logo svg:hover,
+  .logo-circle svg:hover {
+    color: #60a5fa !important;
+    filter: brightness(1.2);
+    transform: scale(1.1);
+  }
+
+  /* Dark mode icon backgrounds */
+  .service-icon {
+    background: rgba(59, 130, 246, 0.2) !important;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .benefit-icon,
+  .feature-icon {
+    background: rgba(59, 130, 246, 0.15) !important;
+  }
+
+  .icon-bg {
+    background: rgba(59, 130, 246, 0.05) !important;
+  }
+
+  /* AboutDetail page dark mode styles */
+  .why-icon {
+    background: rgba(59, 130, 246, 0.2) !important;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .expertise-icon {
+    color: #3b82f6 !important;
+  }
+
+  .value-icon {
+    color: #3b82f6 !important;
+  }
+
+  /* Company Evolution dark mode styles */
+  .point-circle {
+    background: rgba(59, 130, 246, 0.1) !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+  }
+
+  .timeline-point.completed .point-circle,
+  .timeline-point.active .point-circle {
+    background: rgba(59, 130, 246, 0.3) !important;
+    border-color: #3b82f6 !important;
+    color: #3b82f6 !important;
+  }
+
+  .point-icon {
+    color: #3b82f6 !important;
+  }
+
+  .point-year {
+    color: #cbd5e1 !important;
+  }
+
+  .timeline-point.completed .point-year,
+  .timeline-point.active .point-year {
+    color: #3b82f6 !important;
+  }
+
+  .timeline-line {
+    background: rgba(59, 130, 246, 0.2) !important;
+  }
+
+  /* Rating stars dark mode styles */
+  .rating-number {
+    color: #3b82f6 !important;
+  }
+
+  .star-icon {
+    color: rgba(59, 130, 246, 0.3) !important;
+  }
+
+  .star-icon.filled {
+    color: #3b82f6 !important;
+    fill: #3b82f6 !important;
+  }
+
+  .rating-label {
+    color: #cbd5e1 !important;
+  }
+
+  .rating-percent {
+    color: #cbd5e1 !important;
+  }
+
+
+/* Specific dark mode overrides for better contrast */
+html.dark-mode .hero-section {
+  background: linear-gradient(135deg, var(--color-bg-warm)0%, var(--color-bg-main)100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+html.dark-mode .tools-section {
+  background: linear-gradient(135deg, var(--color-bg-warm)0%, var(--color-bg-main)100%);
+  position: relative;
+}
+
+html.dark-mode .tools-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+ 
+}
+
+html.dark-mode .evolution-section {
+  background: linear-gradient(135deg, var(--color-bg-warm)0%, var(--color-bg-main)100%);
+  position: relative;
+}
+
+html.dark-mode .evolution-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  pointer-events: none;
+}
+
+html.dark-mode .services-section {
+  background: linear-gradient(135deg, var(--color-bg-warm)0%, var(--color-bg-main)100%);
+  position: relative;
+}
+
+/* Ensure all text has proper dark mode colors */
+html.dark-mode {
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+}
+
+/* Form elements dark mode */
+html.dark-mode .contact-form input,
+html.dark-mode .contact-form textarea {
+  background-color: var(--color-bg-card);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-light);
+}
+
+html.dark-mode .contact-form input::placeholder,
+html.dark-mode .contact-form textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Cards in dark mode */
+html.dark-mode [class*="card"] {
+  background-color: var(--color-bg-card);
+  position: relative;
+  overflow: hidden;
+}
+
+html.dark-mode [class*="card"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Ensure smooth transitions for all interactive elements */
+html.dark-mode button,
+html.dark-mode a,
+html.dark-mode input,
+html.dark-mode textarea {
+  transition: all var(--transition-normal);
+}
+
+/* Image overlays in dark mode */
+html.dark-mode .image-overlay {
+  background-color: rgba(15, 23, 42, 0.7);
+}
+
+/* Border colors in dark mode */
+html.dark-mode [class*="border"],
+html.dark-mode hr {
+  border-color: var(--color-border-light);
+}
+/* Back to Top Button dark mode */
+html.dark-mode .fo-back-to-top {
+  background:linear-gradient(135deg, var(--color-bg-warm)0%, var(--color-bg-main)100%);
+  
+  color: #3b82f6;
+  
+}
+
+/* Hero cube dark mode */
+html.dark-mode .cube-face {
+  background: linear-gradient(45deg, #1e40af, #1e3a8a) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+html.dark-mode .cube:hover .cube-face {
+  box-shadow: 0 0 30px rgba(30, 64, 175, 0.5) !important;
+}
+
