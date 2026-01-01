@@ -12,7 +12,7 @@ const Hero = ({ smoothScrollToSection }) => {
       <div className="hero-container">
         <div className="hero-content" data-aos="fade-up">
           <div className="hero-badge">
-            <span className="badge-text"><FiZap className="badge-icon" /> Sakthi Tech Solutions</span>
+            <span className="badge-text">Sakthi Tech Solutions</span>
           </div>
           
           <h1 className="hero-title">

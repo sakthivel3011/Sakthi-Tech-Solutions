@@ -190,7 +190,7 @@ const Footer = () => {
         onClick={scrollToTop}
         aria-label="Back to top"
       >
-        <img src="/bot1.png" alt="Up" className="fo-back-to-top-img" />
+       
       </button>
 
     </footer>

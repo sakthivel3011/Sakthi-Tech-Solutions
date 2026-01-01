@@ -30,6 +30,7 @@ const Navbar = ({ smoothScrollToSection }) => {
     { name: 'Tools', href: 'tools' },
     { name: 'Evolution', href: 'evolution' },
     { name: 'Testimonials', href: 'testimonials' },
+    { name: 'Projects', href: 'projects' },
     { name: 'Contact', href: 'contact' },
     { name: 'Feedback', href: 'feedback' },
 
@@ -118,6 +119,14 @@ return (
                               >
                                 {item.name}
                               </Link>
+                            ) : item.href === 'projects' ? (
+                              <Link 
+                                to="/projects" 
+                                className="nav-item"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {item.name}
+                              </Link>
                             ) : item.href === 'home' ? (
                               <a 
                                 href="/" 
@@ -175,6 +184,15 @@ return (
                       <Link 
                         key={item.name} 
                         to="/feedback" 
+                        className="nav-item-mobile"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ) : item.href === 'projects' ? (
+                      <Link 
+                        key={item.name} 
+                        to="/projects" 
                         className="nav-item-mobile"
                         onClick={() => setIsOpen(false)}
                       >

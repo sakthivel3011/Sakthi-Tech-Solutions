@@ -15,12 +15,11 @@ import Terms from './pages/Terms'
 import CookiePolicy from './pages/CookiePolicy'
 import Licensing from './pages/Licensing'
 import Contact from './pages/Contact'
+import Projects from './pages/Projects'
+import ProjectDetail from './pages/ProjectDetail'
 
 // Importing Components
-
-
-
-
+import Chatbot from './components/Chatbot'
 
 import './root.css'
 
@@ -56,6 +55,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Service/:slug" element={<ServiceDetail />} />
             <Route path="/about-us" element={<AboutDetail />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -64,6 +65,7 @@ function App() {
             <Route path="/licensing" element={<Licensing />} />
           </Route>
         </Routes>
+        <Chatbot />
       </Router>
     </ThemeProvider>
   )
