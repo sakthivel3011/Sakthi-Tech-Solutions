@@ -3,6 +3,30 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { FiArrowLeft, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { useTheme } from '../context/ThemeContext'
 import '../styles/ProjectDetail.css'
+import G1 from '../assets/images/projects/G1.png'
+import G2 from '../assets/images/projects/G2.png'
+import G3 from '../assets/images/projects/G3.png'
+import G4 from '../assets/images/projects/G4.png'
+
+
+import EN1 from '../assets/images/projects/EN1.png'
+import EN2 from '../assets/images/projects/EN2.png'
+import EN3 from '../assets/images/projects/EN3.png'
+
+
+import E1 from '../assets/images/projects/E1.png'
+import E2 from '../assets/images/projects/E2.png'
+import E3 from '../assets/images/projects/E3.png'
+
+import C1 from '../assets/images/projects/C1.png'
+import C2 from '../assets/images/projects/C2.png'
+import C3 from '../assets/images/projects/C3.png'
+
+import A1 from '../assets/images/projects/A1.png'
+import A2 from '../assets/images/projects/A2.png'
+import A3 from '../assets/images/projects/A3.png'
+import A4 from '../assets/images/projects/A4.png'
+import A5 from '../assets/images/projects/A5.png'
 
 const ProjectDetail = () => {
   const { id } = useParams()
@@ -13,57 +37,135 @@ const ProjectDetail = () => {
 
   const projectData = {
     1: {
-      title: 'E-Commerce Platform',
-      category: 'Web Application',
-      description: 'A comprehensive e-commerce solution with advanced features including product management, shopping cart, secure checkout, payment integration, order tracking, and admin dashboard.',
-      fullDescription: 'This full-featured e-commerce platform revolutionizes online shopping with its intuitive interface and powerful backend. Built with modern technologies, it provides seamless shopping experience with real-time inventory updates, multiple payment gateways, automated email notifications, and comprehensive analytics dashboard for business insights.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux', 'Express', 'JWT'],
+      title: 'GoLeave',
+      category: 'Leave Management System',
+      description: 'A leave management system that streamlines the process of requesting, approving, and tracking employee leaves within an organization.',
+      fullDescription: 'GoLeave is a comprehensive leave management solution designed to simplify the entire leave request process. With automated workflows, real-time notifications, and detailed analytics, it helps organizations manage their workforce efficiently. The system integrates seamlessly with existing HR systems and provides a user-friendly interface for both employees and managers.',
+      technologies: ['React', 'CSS', 'Appscript', 'Firebase'],
       images: [
-        '/projects/ecommerce.jpg',
-        '/projects/ecommerce-1.jpg',
-        '/projects/ecommerce-2.jpg',
-        '/projects/ecommerce-3.jpg',
-        '/projects/ecommerce-4.jpg'
+        G1,
+        G2,
+        G3,
+        G4
       ],
       features: [
-        'User authentication and authorization',
-        'Product catalog with search and filters',
-        'Shopping cart and wishlist',
-        'Secure payment gateway integration',
-        'Order management system',
-        'Admin dashboard',
-        'Real-time inventory tracking',
-        'Customer reviews and ratings'
+        'Easy leave request submission',
+        'Manager approval workflow',
+        'Real-time leave balance tracking',
+        'Automated email notifications',
+        'Calendar integration',
+        'Multiple leave types support',
+        'Leave history and reports',
+        'Mobile responsive design'
       ],
-      client: 'Retail Business',
-      duration: '3 months',
-      year: '2024',
+      client: 'Kongu Engineering College',
+      duration: '2 months',
+      year: '2025',
       status: 'completed'
     },
     2: {
-      title: 'Business Dashboard',
-      category: 'Analytics Dashboard',
-      description: 'Real-time analytics and reporting dashboard providing comprehensive business insights with interactive charts, data visualization, and performance metrics.',
-      fullDescription: 'An enterprise-grade dashboard that transforms raw data into actionable insights. Features real-time data updates, customizable widgets, advanced filtering, export capabilities, and role-based access control. Perfect for monitoring KPIs, sales metrics, and business performance.',
-      technologies: ['React', 'Chart.js', 'Firebase', 'Material-UI', 'Redux', 'D3.js'],
+      title: 'Enthusia - Kec',
+      category: 'Tech Fest Website',
+      description: 'The biggest tech fest of Kongu Engineering College.',
+      fullDescription: 'Enthusia is the flagship technical festival of Kongu Engineering College, bringing together innovative minds and cutting-edge technology. This comprehensive web platform features event registration, live countdown timers, event schedules, participant management, and real-time updates. The AI-powered chatbot assists users with queries and navigation throughout the website.',
+      technologies: ['React', 'CSS', 'Appscript', 'Firebase', 'Ai'],
       images: [
-        '/projects/dashboard.jpg',
-        '/projects/dashboard-1.jpg',
-        '/projects/dashboard-2.jpg',
-        '/projects/dashboard-3.jpg'
+        EN1,
+        EN2,
+        EN3
       ],
       features: [
-        'Real-time data visualization',
-        'Customizable dashboard widgets',
-        'Advanced analytics and reporting',
-        'Export data to PDF/Excel',
-        'Role-based access control',
-        'Interactive charts and graphs',
-        'Performance monitoring',
-        'Automated report generation'
+        'Event registration and management',
+        'Live countdown timers',
+        'AI-powered chatbot assistance',
+        'Real-time event updates',
+        'Participant dashboard',
+        'Event schedule and calendar',
+        'Photo gallery and highlights',
+        'Responsive design for all devices'
       ],
-      client: 'Corporate Enterprise',
+      client: 'Kongu Engineering College',
       duration: '2 months',
+      year: '2025',
+      status: 'completed'
+    },
+    3: {
+      title: 'Energy & Environment Conservation Club',
+      category: 'Official Club Website',
+      description: 'Official website showcasing our mission, events, and sustainability initiatives on campus.',
+      fullDescription: 'The Energy & Environment Conservation Club website serves as a digital platform to promote environmental awareness and sustainability initiatives on campus. Built with modern web technologies, it features engaging content about eco-friendly practices, upcoming events, volunteer opportunities, and educational resources. The website aims to inspire students to take action towards a greener future.',
+      technologies: ['Html', 'CSS', 'JavaScript', 'Bootstrap'],
+      images: [
+        E1,
+        E2,
+        E3
+      ],
+      features: [
+        'Mission and vision showcase',
+        'Event calendar and registration',
+        'Sustainability initiatives tracker',
+        'Educational resources library',
+        'Member profiles and testimonials',
+        'Photo gallery of activities',
+        'Newsletter subscription',
+        'Contact and volunteer forms'
+      ],
+      client: 'Kongu Engineering College - E&E Club',
+      duration: '1 month',
+      year: '2025',
+      status: 'completed'
+    },
+    4: {
+      title: 'Cultural & Music Club - Kec',
+      category: 'Cultural Club Website',
+      description: 'Showcasing KEC\'s Cultural Excellence.',
+      fullDescription: 'The Cultural & Music Club website celebrates the rich cultural heritage and artistic talents of Kongu Engineering College. This dynamic platform features event highlights, performance schedules, member showcases, and cultural news. With an elegant dark-themed design and smooth animations, it captures the essence of cultural excellence and artistic expression.',
+      technologies: ['React', 'CSS', 'Appscript', 'Ai'],
+      images: [
+       C1,
+       C2,
+       C3
+      ],
+      features: [
+        'Event showcase and highlights',
+        'Performance video gallery',
+        'Member talent profiles',
+        'Event registration system',
+        'Cultural news and updates',
+        'AI-powered event recommendations',
+        'Interactive event calendar',
+        'Social media integration'
+      ],
+      client: 'Kongu Engineering College - Cultural Club',
+      duration: '1 month',
+      year: '2025',
+      status: 'completed'
+    },
+    5: {
+      title: 'SRI ANNAKAMATCHI TRADERS',
+      category: 'E-Commerce Website',
+      description: 'Built a responsive e-commerce website with secure checkout and easy navigation. Focused on a smooth experience.',
+      fullDescription: 'SRI ANNAKAMATCHI TRADERS is a premium e-commerce platform specializing in rice varieties and agricultural products. The website features a comprehensive product catalog with detailed descriptions, secure payment processing, order tracking, and customer management. Built with a focus on user experience, it provides seamless navigation and smooth checkout process, making online shopping convenient for customers.',
+      technologies: ['Html', 'CSS', 'JavaScript', 'Bootstrap', 'Node.js', 'MongoDB'],
+      images: [
+        A1,
+        A2,
+        A3,
+        A4,
+        A5
+      ],
+      features: [
+        'Rice varieties product catalog',
+        'Secure checkout system',
+        'Order tracking and management',
+        'Customer account dashboard',
+        'Shopping cart functionality',
+        'Payment gateway integration',
+        'Product search and filters',
+        'Responsive mobile design'
+      ],
+      client: 'Sri Annakamatchi Traders',
+      duration: '1 month',
       year: '2024',
       status: 'completed'
     }
@@ -143,12 +245,7 @@ const ProjectDetail = () => {
               ))}
             </ul>
 
-            <h3>Technologies Used</h3>
-            <div className="tech-stack">
-              {project.technologies.map((tech, index) => (
-                <span key={index} className="tech-badge">{tech}</span>
-              ))}
-            </div>
+            
           </div>
 
           <div className="info-right" data-aos="fade-left">

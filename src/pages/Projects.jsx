@@ -3,6 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 import '../styles/Projects.css'
 
+import G from '../assets/images/projects/G1.png'
+import EN from '../assets/images/projects/EN1.png'
+import E from '../assets/images/projects/E1.png'
+import C from '../assets/images/projects/C1.png'
+import A from '../assets/images/projects/A1.png'
+
 const Projects = () => {
   const { isDarkMode } = useTheme()
   const navigate = useNavigate()
@@ -11,85 +17,52 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: 'GoLeave',
       category: 'web',
-      image: '/projects/ecommerce.jpg',
-      description: 'Full-featured online shopping platform with payment integration',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      image: G,
+      description: 'A leave management system that streamlines the process of requesting, approving, and tracking employee leaves within an organization.',
+      technologies: ['React', 'CSS', 'Appscript', 'Firebase'],
       status: 'completed'
     },
     {
       id: 2,
-      title: 'Business Dashboard',
-      category: 'dashboard',
-      image: '/projects/dashboard.jpg',
-      description: 'Real-time analytics and reporting dashboard for business insights',
-      technologies: ['React', 'Chart.js', 'Firebase', 'Material-UI'],
+      title: 'Enthusia - Kec',
+      category: 'web',
+      image: EN,
+      description: 'The biggest tech fest of Kongu Engineering College. An annual event that showcases technological innovations and hosts various competitions and workshops.',
+      technologies: ['React', 'CSS', 'Appscript', 'Firebase', 'Ai'],
       status: 'completed'
     },
     {
       id: 3,
-      title: 'Restaurant App',
-      category: 'mobile',
-      image: '/projects/restaurant.jpg',
-      description: 'Food ordering and delivery mobile application',
-      technologies: ['React Native', 'Redux', 'Node.js', 'PostgreSQL'],
+      title: 'Energy & Environment Conservation Club',
+      category: 'web',
+      image: E,
+      description: 'Official website showcasing our mission, events, and sustainability initiatives on campus.',
+      technologies: ['Html', 'CSS', 'JavaScript', 'Bootstrap'],
       status: 'completed'
     },
     {
       id: 4,
-      title: 'Portfolio Website',
+      title: 'Cultural & Music Club - Kec',
       category: 'web',
-      image: '/projects/portfolio.jpg',
-      description: 'Modern and responsive portfolio website with animations',
-      technologies: ['React', 'Vite', 'CSS3', 'AOS'],
+      image: C,
+      description: 'Showcasing KEC\'s Cultural Excellence.Highlighting events, achievements, and member talents.',
+      technologies: ['React', 'CSS', 'Appscript', 'Ai'],
       status: 'completed'
     },
     {
       id: 5,
-      title: 'Inventory System',
-      category: 'software',
-      image: '/projects/inventory.jpg',
-      description: 'Complete inventory management system for retail businesses',
-      technologies: ['React', 'Express', 'MySQL', 'PDF Generator'],
-      status: 'completed'
-    },
-    {
-      id: 6,
-      title: 'Booking Platform',
+      title: 'SRI ANNAKAMATCHI TRADERS',
       category: 'web',
-      image: '/projects/booking.jpg',
-      description: 'Hotel and travel booking management system',
-      technologies: ['Next.js', 'Prisma', 'PostgreSQL', 'Tailwind'],
-      status: 'completed'
-    },
-    {
-      id: 7,
-      title: 'Fitness Tracker',
-      category: 'mobile',
-      image: '/projects/fitness.jpg',
-      description: 'Health and fitness tracking mobile application',
-      technologies: ['React Native', 'Firebase', 'Charts', 'AsyncStorage'],
-      status: 'completed'
-    },
-    {
-      id: 8,
-      title: 'CRM System',
-      category: 'software',
-      image: '/projects/crm.jpg',
-      description: 'Customer relationship management software',
-      technologies: ['Vue.js', 'Laravel', 'MySQL', 'Redis'],
+      image: A,
+      description: 'Built a responsive e-commerce website with secure checkout and easy navigation. Focused on a smooth.',
+      technologies: ['Html', 'Bootstrap', 'Node.js', 'MongoDB'],
       status: 'completed'
     }
   ]
 
-  const categories = [
-    { id: 'all', name: 'All Projects' },
-    { id: 'web', name: 'Web Apps' },
-    { id: 'mobile', name: 'Mobile Apps' },
-    { id: 'dashboard', name: 'Dashboards' },
-    { id: 'software', name: 'Software' }
-  ]
+  
 
   const filteredProjects = selectedCategory === 'all' 
     ? projects 
@@ -104,18 +77,7 @@ const Projects = () => {
           <p>Showcasing our successful digital solutions and innovations</p>
         </div>
 
-        {/* Category Filter */}
-        <div className="category-filter" data-aos="fade-up">
-          {categories.map(category => (
-            <button
-              key={category.id}
-              className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(category.id)}
-            >
-              {category.name}
-            </button>
-          ))}
-        </div>
+        
 
         {/* Projects Grid */}
         <div className="projects-grid">
@@ -148,11 +110,7 @@ const Projects = () => {
                     <span key={i} className="tech-badge">{tech}</span>
                   ))}
                 </div>
-                <div className="project-status">
-                  <span className={`status-badge ${project.status}`}>
-                    {project.status === 'completed' ? '✓ Completed' : 'In Progress'}
-                  </span>
-                </div>
+                
               </div>
             </div>
           ))}

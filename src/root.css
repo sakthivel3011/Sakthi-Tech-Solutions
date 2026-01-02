@@ -340,3 +340,38 @@ p {
     scroll-padding-top: 60px;
   }
 }
+/* Extra Small Devices (< 360px) */
+@media (max-width: 359px) {
+  .section-container {
+    padding: 0 0.75rem;
+  }
+  
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.35rem; }
+  h3 { font-size: 1.1rem; }
+  h4 { font-size: 0.95rem; }
+  
+  p { font-size: 0.85rem; }
+  
+  .btn-primary, .btn-secondary, .btn-outline {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Prevent horizontal overflow on all devices */
+@media (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}

@@ -48,7 +48,7 @@ const Footer = () => {
     },
     {
       icon: <FiInstagram />,
-      href: 'https://instagram.com',
+      href: 'https://www.instagram.com/sakthiix/?igsh=MXEwNXV3cXduZmluMQ%3D%3D#',
       label: 'Instagram'
     },
     {
@@ -93,7 +93,23 @@ const Footer = () => {
             <h2 className="fo-brand-title">
               Sakthi Tech Solutions helps you grow your business digitally.
             </h2>
-           
+            <div className="fo-contact-info" style={{ marginTop: '20px' }}>
+              <p style={{ marginBottom: '10px', fontSize: '1rem', color: '#666' }}>
+                <strong style={{ color: '#0b5ed7' }}>SAKTHIVEL S</strong>
+              </p>
+              <p style={{ marginBottom: '8px', fontSize: '0.95rem', color: '#666' }}>
+                <FiPhone style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                <a href="tel:+918925490989" style={{ color: '#666', textDecoration: 'none' }}>+91 8925490989</a>
+              </p>
+              <p style={{ marginBottom: '8px', fontSize: '0.95rem', color: '#666' }}>
+                <FiMail style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                <a href="mailto:sakthitech.contact@gmail.com" style={{ color: '#666', textDecoration: 'none' }}>sakthitech.contact@gmail.com</a>
+              </p>
+              <p style={{ marginBottom: '8px', fontSize: '0.95rem', color: '#666' }}>
+                <FiMapPin style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                Portfolio: <a href="https://sakthis.netlify.app" target="_blank" rel="noopener noreferrer" style={{ color: '#0b5ed7', textDecoration: 'none' }}>sakthis.netlify.app</a>
+              </p>
+            </div>
           </div>
 
           {/* RIGHT LINKS SECTION */}

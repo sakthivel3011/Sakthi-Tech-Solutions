@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
-import { FiMessageCircle, FiX, FiSend, FiPhone, FiClock, FiDollarSign } from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom'
+import { FiMessageCircle, FiX, FiSend, FiPhone, FiClock, FiDollarSign, FiExternalLink } from 'react-icons/fi'
 import { MdRocketLaunch } from 'react-icons/md'
 import { AiOutlineAppstore } from 'react-icons/ai'
 import { useTheme } from '../context/ThemeContext'
@@ -13,6 +14,7 @@ const Chatbot = () => {
   const [inputValue, setInputValue] = useState('')
   const messagesEndRef = useRef(null)
   const { isDarkMode } = useTheme()
+  const navigate = useNavigate()
 
   // Initialize chatbot with name from localStorage
   useEffect(() => {
@@ -40,11 +42,10 @@ const Chatbot = () => {
 
   // Quick access buttons
   const quickButtons = [
-    { label: 'Services', keyword: 'services', icon: <AiOutlineAppstore /> },
     
     { label: 'Contact', keyword: 'contact', icon: <FiPhone /> },
    
-    
+    { label: 'Pages', keyword: 'pages', icon: <FiClock /> }
   ]
 
   // Knowledge base with keywords
@@ -61,60 +62,179 @@ const Chatbot = () => {
 
 Would you like to know more about any specific service?`
     },
-   
+    pages: {
+      keywords: ['pages', 'page', 'navigate', 'navigation', 'go to', 'show me', 'where is'],
+      response: ` Website Pages:
+
+ Home - /
+ About Us - /about-us
+ Services - /services (on Home page)
+ Projects - /projects
+ Contact - /contact
+ Feedback - /feedback
+
+ Legal Pages:
+• Privacy Policy - /privacy-policy
+• Terms & Conditions - /terms-and-conditions
+• Cookie Policy - /cookie-policy
+• Licensing - /licensing
+
+Click the buttons below to navigate!`,
+      showPageButtons: true
+    },
+    home: {
+      keywords: ['home', 'homepage', 'main page', 'home page'],
+      response: ` Home Page: /
+
+The homepage showcases:
+• Hero section with our mission
+• Services overview
+• Company evolution
+• Client testimonials
+• Tools we use
+
+Visit: Click "Home" in the navigation menu or go to /`
+    },
+    about: {
+      keywords: ['about', 'who are you', 'company', 'team', 'experience', 'background', 'about us'],
+      response: ` About Us: /about-us
+
+Learn about:
+• Our Mission & Vision
+• Company Background
+• Team & Expertise
+• Our Journey
+
+Visit: Click "About Us" in the menu or go to /about-us
+
+Want to know more about our work?`
+    },
+    projects: {
+      keywords: ['projects', 'portfolio', 'work', 'examples', 'showcase', 'previous work'],
+      response: ` Projects Page: /projects
+
+See our completed projects:
+• GoLeave - Leave Management System
+• Enthusia - KEC Tech Fest
+• Energy & Environment Club
+• Cultural & Music Club - KEC
+• SRI ANNAKAMATCHI TRADERS
+
+Technologies: React, Firebase, Node.js, MongoDB & more!
+
+Visit: Click "Projects" in the menu or go to /projects`
+    },
     contact: {
-      keywords: ['contact', 'reach', 'email', 'phone', 'call', 'message', 'talk'],
-      response: `Get in Touch:
+      keywords: ['contact', 'reach', 'email', 'phone', 'call', 'message', 'talk', 'contact page'],
+      response: ` Contact Us: /contact
 
-• Email: sakthitech.contact@gmail.com
-• Phone: +91 89254 90989
-• Website: https://sakthis.netlify.app/
+Get in Touch:
 
-Or use our contact form on the website. We typically respond within 24 hours!
+ SAKTHIVEL S
+ Phone: +91 8925490989
+ Email: sakthitech.contact@gmail.com
+Portfolio: https://sakthis.netlify.app
 
-Want to schedule a meeting?`
+ Working Hours:
+Mon-Fri: 9:00 AM - 6:00 PM IST
+Saturday: 10:00 AM - 4:00 PM IST
+
+Visit: Go to /contact to fill the contact form!`
+    },
+    feedback: {
+      keywords: ['feedback', 'review', 'rate', 'rating', 'comment', 'suggestion', 'feedback page'],
+      response: `Feedback Page: /feedback
+
+Share your experience with us!
+
+• Rate our services
+• Leave comments
+• Share suggestions
+• Help us improve
+
+Visit: Click "Feedback" in the menu or go to /feedback
+
+Your feedback helps us grow! `
+    },
+    privacy: {
+      keywords: ['privacy', 'privacy policy', 'data', 'private', 'security'],
+      response: ` Privacy Policy: /privacy-policy
+
+Learn about:
+• How we collect data
+• Data usage & protection
+• Your privacy rights
+• Security measures
+
+Visit: Go to /privacy-policy
+
+We take your privacy seriously!`
+    },
+    terms: {
+      keywords: ['terms', 'terms and conditions', 'conditions', 'rules', 'agreement'],
+      response: ` Terms & Conditions: /terms-and-conditions
+
+Review our:
+• Service terms
+• User agreements
+• Policies & guidelines
+• Legal information
+
+Visit: Go to /terms-and-conditions`
+    },
+    cookie: {
+      keywords: ['cookie', 'cookies', 'cookie policy', 'tracking'],
+      response: ` Cookie Policy: /cookie-policy
+
+Learn about:
+• What cookies we use
+• Why we use them
+• How to manage cookies
+• Your preferences
+
+Visit: Go to /cookie-policy`
+    },
+    license: {
+      keywords: ['license', 'licensing', 'copyright', 'legal'],
+      response: ` Licensing: /licensing
+
+Information about:
+• Software licenses
+• Usage rights
+• Copyright information
+• Legal compliance
+
+Visit: Go to /licensing`
     },
     hours: {
       keywords: ['hours', 'working hours', 'timing', 'time', 'when open', 'availability', 'available'],
-      response: `Working Hours:
+      response: ` Working Hours:
 
 Monday - Friday: 9:00 AM - 6:00 PM IST
 Saturday: 10:00 AM - 4:00 PM IST
 Sunday: Closed (Emergency support available)
 
-We respond to emails within 24 hours, even on holidays!
+ Email responses within 24 hours, even on holidays!
 
-Need urgent assistance?`
-    },
-    about: {
-      keywords: ['about', 'who are you', 'company', 'team', 'experience', 'background'],
-      response: `About Sakthi Tech Solutions:
-
-We're a leading digital transformation company specializing in:
-• Custom Web Development
-• Business Solutions
-• Digital Innovation
-
-Our Mission: Powering Your Digital Growths
-
-With years of experience and a passionate team, we've helped numerous businesses achieve their digital goals.
-
-Want to know more about our work?`
+Need urgent assistance? Call us at +91 8925490989`
     },
     'get started': {
       keywords: ['get started', 'start', 'begin', 'how to start', 'first step', 'onboarding'],
-      response: `Getting Started is Easy!
+      response: ` Getting Started is Easy!
 
-1. Share Your Requirements - Tell us about your project
-2. Free Consultation - We'll discuss your needs
-3. Custom Proposal - Receive a detailed plan & quote
-4. Project Kickoff - Let's build something amazing!
+Share Your Requirements - Tell us about your project
+ Free Consultation - We'll discuss your needs
+ Custom Proposal - Receive a detailed plan & quote
+ Project Kickoff - Let's build something amazing!
 
-Ready to start? Click the Contact button or tell me about your project!`
+ Contact us: /contact
+ Give feedback: /feedback
+
+Ready to start? Share your project idea!`
     },
     support: {
       keywords: ['support', 'help', 'assist', 'problem', 'issue', 'maintenance'],
-      response: `Support & Maintenance:
+      response: ` Support & Maintenance:
 
 We provide:
 • 24/7 Technical Support
@@ -127,7 +247,7 @@ All our projects come with dedicated support. Need help with something?`
     },
     technology: {
       keywords: ['technology', 'tech', 'tools', 'stack', 'framework', 'languages'],
-      response: `Technologies We Use:
+      response: ` Technologies We Use:
 
 • Frontend: React, Vue.js, Next.js
 • Backend: Node.js, Python, PHP
@@ -137,23 +257,9 @@ All our projects come with dedicated support. Need help with something?`
 
 We choose the best tech stack for your specific needs!`
     },
-    portfolio: {
-      keywords: ['portfolio', 'work', 'projects', 'examples', 'showcase', 'previous work'],
-      response: `Our Portfolio:
-
-We've successfully delivered:
-• 100+ Web Applications
-• 50+ E-commerce Platforms
-• 30+ Admin Dashboards
-• 20+ Mobile Apps
-
-Check our website's Evolution section to see our journey and success stories!
-
-Want to see specific examples?`
-    },
     payment: {
-      keywords: ['payment', 'pay', 'payment method', 'installment', 'deposit'],
-      response: `Payment Options:
+      keywords: ['payment', 'pay', 'payment method', 'installment', 'deposit', 'price', 'pricing', 'cost'],
+      response: ` Payment Options:
 
 We accept:
 • Bank Transfer / NEFT / RTGS
@@ -170,7 +276,7 @@ Flexible payment plans available for long-term projects!`
     },
     timeline: {
       keywords: ['timeline', 'duration', 'how long', 'time taken', 'delivery', 'deadline'],
-      response: `Project Timeline:
+      response: ` Project Timeline:
 
 Typical delivery times:
 • Landing Page: 1-2 weeks
@@ -216,19 +322,29 @@ Need a rush delivery? We can discuss expedited options!`
     }
 
     // Default response
-    return `I'd be happy to help, ${userName}!
+    return `I'd be happy to help, ${userName}! 
 
-I can answer questions about:
-• Our Services & Solutions
-• Pricing & Packages
-• Contact Information
-• Working Hours
-• Technology Stack
-• Project Timeline
+I can provide information about:
 
-You can also use the quick buttons below or type your question!
+ Website Pages:
+• Home, About, Projects, Contact, Feedback
 
-Need to speak with our team? Click the Contact button!`
+Services & Solutions
+
+ Pricing & Payment
+
+ Contact Info:
+  - Phone: +91 8925490989
+  - Email: sakthitech.contact@gmail.com
+  - Portfolio: sakthis.netlify.app
+
+ Working Hours & Timeline
+
+Technology Stack
+
+Type your question or use quick buttons!
+
+Example: "show me feedback page" or "contact details"`
   }
 
   const handleSend = () => {
@@ -285,8 +401,8 @@ Need to speak with our team? Click the Contact button!`
   const handleQuickButton = (keyword) => {
     const response = knowledgeBase[keyword]
     if (response) {
-      setMessages(prev => [
-        ...prev,
+      const newMessages = [
+        ...messages,
         {
           type: 'user',
           text: keyword.charAt(0).toUpperCase() + keyword.slice(1),
@@ -295,10 +411,17 @@ Need to speak with our team? Click the Contact button!`
         {
           type: 'bot',
           text: response.response,
-          timestamp: new Date()
+          timestamp: new Date(),
+          showPageButtons: response.showPageButtons || false
         }
-      ])
+      ]
+      setMessages(newMessages)
     }
+  }
+
+  const handlePageNavigation = (path) => {
+    navigate(path)
+    setIsOpen(false)
   }
 
   const handleKeyPress = (e) => {
@@ -347,19 +470,69 @@ Need to speak with our team? Click the Contact button!`
           {/* Messages */}
           <div className="chatbot-messages">
             {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`message ${message.type === 'user' ? 'user-message' : 'bot-message'}`}
-              >
-                <div className="message-content">
-                  <p style={{ whiteSpace: 'pre-line' }}>{message.text}</p>
-                  <span className="message-time">
-                    {message.timestamp.toLocaleTimeString('en-US', {
-                      hour: '2-digit',
-                      minute: '2-digit'
-                    })}
-                  </span>
+              <div key={index}>
+                <div
+                  className={`message ${message.type === 'user' ? 'user-message' : 'bot-message'}`}
+                >
+                  <div className="message-content">
+                    <p style={{ whiteSpace: 'pre-line' }}>{message.text}</p>
+                    <span className="message-time">
+                      {message.timestamp.toLocaleTimeString('en-US', {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                      })}
+                    </span>
+                  </div>
                 </div>
+                
+                {/* Page Navigation Buttons */}
+                {message.showPageButtons && (
+                  <div className="page-navigation-buttons">
+                    <div className="page-nav-section">
+                      <h4> Website Pages:</h4>
+                      <button onClick={() => handlePageNavigation('/')} className="page-nav-btn">
+                        <span> Home</span>
+                        <FiExternalLink size={14} />
+                      </button>
+                      <button onClick={() => handlePageNavigation('/about-us')} className="page-nav-btn">
+                        <span> About Us</span>
+                        <FiExternalLink size={14} />
+                      </button>
+                      <button onClick={() => handlePageNavigation('/projects')} className="page-nav-btn">
+                        <span> Projects</span>
+                        <FiExternalLink size={14} />
+                      </button>
+                      <button onClick={() => handlePageNavigation('/contact')} className="page-nav-btn">
+                        <span> Contact</span>
+                        <FiExternalLink size={14} />
+                      </button>
+                      <button onClick={() => handlePageNavigation('/feedback')} className="page-nav-btn">
+                        <span> Feedback</span>
+                        <FiExternalLink size={14} />
+                      </button>
+                    </div>
+                    
+                    <div className="page-nav-section">
+                      <h4> Legal Pages:</h4>
+                      <button onClick={() => handlePageNavigation('/privacy-policy')} className="page-nav-btn">
+                        <span>Privacy Policy</span>
+                        <FiExternalLink size={14} />
+                      </button>
+                      <button onClick={() => handlePageNavigation('/terms-and-conditions')} className="page-nav-btn">
+                        <span>Terms & Conditions</span>
+                        <FiExternalLink size={14} />
+                      </button>
+                      <button onClick={() => handlePageNavigation('/cookie-policy')} className="page-nav-btn">
+                        <span>Cookie Policy</span>
+                        <FiExternalLink size={14} />
+                      </button>
+                      <button onClick={() => handlePageNavigation('/licensing')} className="page-nav-btn">
+                        <span>Licensing</span>
+                        <FiExternalLink size={14} />
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
             <div ref={messagesEndRef} />

@@ -61,71 +61,50 @@ const cookiePoints = [
   }
 ];
 
-const CookiePolicy = () => {
-  return (
-    <div className="legal-page-container">
-      <div className="legal-page-header">
-        <Link to="/" className="back-link">
-          <FiArrowLeft /> Back to Home
-        </Link>
-        <h1>Cookie Policy</h1>
-        <p className="last-updated">Last Updated: December 30, 2025</p>
-      </div>
+const CookiePolicy = () => (
+  <div className="legal-page privacy-policy-page">
+    {/* Header Section */}
+    <div className="legal-header" data-aos="fade-down">
+      
+      
+      <h1 className="legal-title">Cookie Policy</h1>
+      
+      <p className="legal-subtitle">
+        Understanding how we use cookies to enhance your experience and improve our services.
+      </p>
 
-      <div className="legal-page-content">
-        <div className="intro-section">
-          <p>
-            This Cookie Policy explains how Sakthi Tech Solutions uses cookies and similar technologies 
-            on our website to enhance your experience and improve our services.
-          </p>
-        </div>
-
-        <div className="legal-points">
-          {cookiePoints.map((point, index) => {
-            const IconComponent = point.icon;
-            return (
-              <div 
-                key={index} 
-                className={`legal-point ${point.highlight ? 'highlight' : ''}`}
-              >
-                <div className="point-icon">
-                  <IconComponent />
-                </div>
-                <div className="point-content">
-                  <h3>{point.title}</h3>
-                  <p>{point.details}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="contact-section">
-          <h2>Questions About Our Cookie Policy?</h2>
-          <p>
-            If you have any questions or concerns about our cookie usage or this policy, 
-            please contact us at:
-          </p>
-          <ul>
-            <li>
-              <strong>Email:</strong> contact@sakthitechsolutions.com
-            </li>
-            <li>
-              <strong>Contact Form:</strong> <Link to="/contact">Submit a message</Link>
-            </li>
-          </ul>
-        </div>
-
-        <div className="related-links">
-          <h3>Related Policies</h3>
-          <ul>
-            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
-          </ul>
-        </div>
+      <div className="legal-meta">
+        <span><strong>Effective Date:</strong> January 2025</span>
+        <span><strong>Last Updated:</strong> December 30, 2025</span>
       </div>
     </div>
-  );
-};
+
+    {/* Cookie Table */}
+    <table className="privacy-table" data-aos="fade-up">
+      <thead>
+        <tr>
+          <th className="icon-col">Icon</th>
+          <th className="policy-col">Cookie Type</th>
+          <th className="details-col">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {cookiePoints.map((point, idx) => {
+          const IconComponent = point.icon;
+          return (
+            <tr key={idx} className={point.highlight ? 'highlight-row' : ''}>
+              <td className="icon-cell">
+                <IconComponent className="table-icon" />
+              </td>
+              <td className="policy-title">{point.title}</td>
+              <td className="policy-details">{point.details}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+
+  </div>
+);
 
 export default CookiePolicy;

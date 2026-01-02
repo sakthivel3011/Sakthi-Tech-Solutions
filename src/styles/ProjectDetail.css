@@ -200,6 +200,9 @@
 .features-list {
   list-style: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 30px;
 }
 
 .features-list li {
@@ -453,6 +456,10 @@
 
   .info-left h3 {
     font-size: 1.3rem;
+  }
+
+  .features-list {
+    grid-template-columns: 1fr;
   }
 }
 
